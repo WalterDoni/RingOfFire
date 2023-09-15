@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StartScreenComponent } from './start-screen/start-screen.component';
 import { FireAnimationComponent } from './fire-animation/fire-animation.component';
-import { GameComponent } from './game/game.component';
+import { GameComponent } from './game/GameComponent';
 
 const routes: Routes = [
   {path:'', component: StartScreenComponent},

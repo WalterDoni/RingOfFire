@@ -32,23 +32,32 @@
     }
 }
 
+.played-card{
+    right: 30px;
+    transform: scale(1) translateX(280px) translateY(-290px) rotate(-30deg);
+}
 .pick-card{
-    animation: pick-card-animation 2s ease-in-out;
+    animation: pick-card-animation 1s ease-in-out;
+    transform: scale(1) translateX(280px) translateY(-290px) rotate(-30deg);
 }
 
 @keyframes pick-card-animation{
-    from{
+    0%{
         transform: scale(1);
     }
-    to{
-        transform: scale(1.4);
+    40%{
+        transform: scale(1.2);
     }
-    50%{
-        transform: scale(1.4);
+    60%{
+        transform: scale(1.2);
     }
-
     100%{
-        transform: scale(1.2) translateX(140px) translateY(-180px);
+        transform: scale(1) translateX(280px) translateY(-290px) rotate(-30deg);
     }
 
+}
+
+.player-position{
+    position: absolute;
+    right: 0;
 }
