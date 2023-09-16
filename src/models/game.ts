@@ -1,19 +1,16 @@
 export class Game {
-    public players: string[] = ['Hans', 'Peter', 'Fredi'];
+    public players: string[] = [];
     public stack: string[] = [];
     public playedCards: string[] = [];
     public currentPlayer: number = 0;
 
     constructor() {
         for (let i = 1; i < 14; i++) {
-            this.stack.push(`/assets/img/cards/` + i + `_of_clubs.png`);
-            this.stack.push(`/assets/img/cards/` + i + `_of_diamonds.png`);
-            this.stack.push(`/assets/img/cards/` + i + `_of_hearts.png`);
-            this.stack.push(`/assets/img/cards/` + i + `_of_spades.png`);
+            this.stack.push( i + `_of_clubs`);
+            this.stack.push( i + `_of_diamonds`);
+            this.stack.push( i + `_of_hearts`);
+            this.stack.push(i + `_of_spades`);
         }
-        this.stack.push(`assets/img/cards/14_black_joker.png`);
-        this.stack.push(`assets/img/cards/14_red_joker.png`);
-
         shuffle(this.stack);
     }
 }

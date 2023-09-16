@@ -64,11 +64,7 @@
 
     h1{
         animation: fadeInAnimation 1.5s ease-in-out;
-        background: linear-gradient(
-            to right, #f32121, #ff6b08,
-            );
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
+        color: orange;
         font-size: 160px;
         
     }
@@ -79,9 +75,7 @@
     from {
         opacity: 0; //transparenz//
         transform: translateY(50px);
-        background: linear-gradient(
-            to left, #f32121, #ff6b08,
-            );
+       
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;   
     }
