@@ -1,11 +1,11 @@
-import { Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-game-info',
   templateUrl: './game-info.component.html',
   styleUrls: ['./game-info.component.scss']
 })
-export class GameInfoComponent implements OnChanges{
+export class GameInfoComponent implements OnChanges {
   cardAction = [
     { title: 'Waterfall', description: 'Everyone has to start drinking at the same time. As soon as player 1 stops drinking, player 2 may stop drinking. Player 3 may stop as soon as player 2 stops drinking, and so on.' },
     { title: 'You', description: 'You decide who drinks' },
@@ -22,15 +22,17 @@ export class GameInfoComponent implements OnChanges{
     { title: 'Rule', description: 'Make a rule. Everyone needs to drink when he breaks the rule.' },
   ];
 
-  title = '';
-  description = ';'
+  title: string = '';
+  description: string = '';
+  @Input() card: string = '';
 
-  @Input() card: any;
 
-  ngOnChanges(changes: SimpleChanges): void{
-    if(this.card){
-    let cardnumber = +this.card.split('_')[0];
-    this.title = this.cardAction[cardnumber -1].title;
-    this.description = this.cardAction[cardnumber -1].description;
-  }}
+  ngOnChanges(): void {
+    if (this.card) {
+      let cardNumber = +this.card.split('_')[0];
+      this.title = this.cardAction[cardNumber - 1].title;
+      this.description = this.cardAction[cardNumber - 1].description;
+    }
+  }
+
 }
