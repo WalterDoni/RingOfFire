@@ -93,4 +93,73 @@
 
 app-player-mobile{
     margin-left: 8px;
+    cursor: pointer;
+
+    &:hover{
+        filter: brightness(1.15)
+    }
+}
+
+app-player{
+    cursor: pointer;
+    &:hover{
+        filter: brightness(1.15)
+    }
+}
+
+.gameOver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black ;
+    height: 100vh;
+
+    h1 {
+        color: white;
+        font-size: 160px;
+        animation: ease-in-out, pulsate 1.5s infinite alternate;
+
+        @media(max-width:1000px){
+            font-size: 100px;
+        }
+
+        @media(max-width:620px){
+            font-size: 80px;
+        }
+
+        @media(max-width:490px){
+            font-size: 50px;
+        }
+    }
+
+}
+
+
+@keyframes pulsate {
+    100% {
+        /* Larger blur radius */
+        text-shadow:
+            0 0 4px #ff7800,
+            0 0 11px #ff7800,
+            0 0 19px #0044ff,
+            0 0 40px #0044ff,
+            0 0 80px #0044ff,
+            0 0 90px #0044ff,
+            0 0 100px #0044ff,
+            0 0 150px #0044ff;
+    }
+}
+
+
+.preloadImageForSmartphone{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    z-index: -99999;
 }

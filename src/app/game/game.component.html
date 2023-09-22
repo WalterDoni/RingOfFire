@@ -1,14 +1,16 @@
-<app-player *ngFor="let player of game.players; let i= index;" [name]='player' [ngStyle]="{'top.px': 100 +(i * 100)}"
-    [playerActive]="i == game.currentPlayer" class="player-position hide-mobile"></app-player>
+<app-player (click)="editPlayer(i)" [image]="game.player_images[i]" *ngFor="let player of game.players; let i= index;"
+    [name]='player' [ngStyle]="{'top.px': 50 +(i * 100)}" [playerActive]="i == game.currentPlayer"
+    class="player-position hide-mobile"></app-player>
 
-   <div class="scroll-container"><app-player-mobile *ngFor="let player of game.players; let i= index;" [name]='player' 
-    [playerActive]="i == game.currentPlayer" class="hide-desktop"></app-player-mobile></div> 
+<div *ngIf="!gameOver" class="scroll-container"><app-player-mobile [image]="game.player_images[i]" (click)="editPlayer(i)"
+        *ngFor="let player of game.players; let i= index;" [name]='player' [playerActive]="i == game.currentPlayer"
+        class="hide-desktop"></app-player-mobile></div>
 
-<div class="field">
+<div *ngIf="gameOver" class="gameOver"><h1>GAME OVER!</h1></div>
+
+<div *ngIf="!gameOver" class="field">
     <img class="background" src="assets/img/background.jpg" alt="">
-
     <div class="card-stack">
-
         <!-- Cardstack-->
         <img [ngStyle]="{'right.px' : i * 5}" *ngFor="let card of [1,2,3,4,5] let i = index;" src="assets/img/cover.png"
             alt="">
@@ -20,11 +22,12 @@
         <!-- Current card (Animation)-->
         <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pick-card" style="right: 30px"
             src="assets/img/cards/{{game.currentCard}}.png">
-
     </div>
-
 </div>
-<app-game-info [card]="game.currentCard"></app-game-info>
-<button mat-fab color="primary" (click)="openDialog()" class="btn-add">
+<app-game-info *ngIf="!gameOver" [card]="game.currentCard"></app-game-info>
+<button *ngIf="!gameOver" mat-fab color="primary" (click)="openDialog()" class="btn-add">
     <mat-icon>add</mat-icon>
 </button>
+
+
+<img  class="preloadImageForSmartphone" src="assets/img/cards/{{game.stack[game.stack.length - 1]}}.png" >

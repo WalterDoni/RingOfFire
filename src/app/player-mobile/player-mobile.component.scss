@@ -21,6 +21,9 @@
     span{
         font-size: 18px;
         margin-top: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       
     }
 }
