@@ -53,10 +53,10 @@
   @keyframes glow {
     0%,
     100% {
-      background-color: #ef5a00;
+      background-color: #0044ff;
     }
     50% {
-      background-color: #ff7800;
+      background-color: #396cf7;
     }
   }
   
@@ -85,12 +85,12 @@
       height: 100%;
       background-image: radial-gradient(
         farthest-corner at 10px 0,
-        #d43300 0%,
-        #ef5a00 95%
+        #0044ff 0%,
+        #396cf7 95%
       );
       transform: scaleX(0.8) rotate(45deg);
       border-radius: 0 40% 60% 40%;
-      filter: drop-shadow(0 0 10px #d43322);
+      filter: drop-shadow(0 0 10px #396cf7);
     }
   
     .particle-fire {
@@ -99,9 +99,9 @@
       left: 45%;
       width: 10px;
       height: 10px;
-      background-color: #ef5a00;
+      background-color: #0044ff;
       border-radius: 50%;
-      filter: drop-shadow(0 0 10px #d43322);
+      filter: drop-shadow(0 0 10px #396cf7);
       animation: particleUp 2s ease-out 0;
       animation-iteration-count: infinite;
       animation-fill-mode: both;
@@ -122,10 +122,10 @@
       right: -25%;
       width: 80%;
       height: 80%;
-      background-color: #ef5a00;
+      background-color: #0044ff;
       transform: scaleX(0.8) rotate(45deg);
       border-radius: 0 40% 60% 40%;
-      filter: drop-shadow(0 0 10px #d43322);
+      filter: drop-shadow(0 0 10px #396cf7);
     }
   
     .particle-fire {
@@ -134,10 +134,10 @@
       left: 50%;
       width: 15px;
       height: 15px;
-      background-color: #ef5a00;
+      background-color: #0044ff;
       transform: scaleX(0.8) rotate(45deg);
       border-radius: 50%;
-      filter: drop-shadow(0 0 10px #d43322);
+      filter: drop-shadow(0 0 10px #396cf7);
       animation: particleUp 2s ease-out 0;
       animation-iteration-count: infinite;
       animation-fill-mode: both;
@@ -158,10 +158,10 @@
       left: -20%;
       width: 80%;
       height: 80%;
-      background-color: #ef5a00;
+      background-color: #0044ff;
       transform: scaleX(0.8) rotate(45deg);
       border-radius: 0 40% 60% 40%;
-      filter: drop-shadow(0 0 10px #d43322);
+      filter: drop-shadow(0 0 10px #396cf7);
     }
   
     .particle-fire {
@@ -170,9 +170,9 @@
       left: 20%;
       width: 10%;
       height: 10%;
-      background-color: #ef5a00;
+      background-color: #0044ff;
       border-radius: 50%;
-      filter: drop-shadow(0 0 10px #d43322);
+      filter: drop-shadow(0 0 10px #396cf7);
       animation: particleUp 3s infinite ease-out 0;
       animation-fill-mode: both;
     }
@@ -184,7 +184,7 @@
     left: 20%;
     width: 75%;
     height: 75%;
-    background-color: #ff7800;
+    background-color: #1854fa;
     transform: scaleX(0.8) rotate(45deg);
     border-radius: 0 40% 100% 40%;
     filter: blur(10px);

@@ -4,3 +4,19 @@ body{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+@media(max-width: 1070px){
+    .hide-mobile{
+        display: none;
+    }
+}
+@media(min-width: 1070px){
+    .hide-desktop{
+        display: none;
+    }
+}

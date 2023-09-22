@@ -20,6 +20,15 @@
     img{
         position: absolute;
         width: 250px;
+
+        @media (max-width:800px) {
+            width: 220px;  
+        }
+
+        @media (max-width:650px) {
+            width: 200px;
+            
+        }
     };
 }
 
@@ -35,6 +44,7 @@
 .played-card{
     right: 30px;
     transform: scale(1) translateX(280px) translateY(-290px) rotate(-30deg);
+ 
 }
 .pick-card{
     animation: pick-card-animation 1s ease-in-out;
@@ -68,4 +78,19 @@
     position: absolute;
     bottom: 32px;
     right: 32px;
+}
+
+.scroll-container{
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 200px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+app-player-mobile{
+    margin-left: 8px;
 }
