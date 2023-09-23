@@ -26,7 +26,10 @@ export class GameInfoComponent implements OnChanges {
   description: string = '';
   @Input() card: string = '';
 
-
+/**
+ * Called whenever data-bound input properties change.
+ * Updates the component's title and description based on the provided 'card' input.
+ */
   ngOnChanges(): void {
     if (this.card) {
       let cardNumber = +this.card.split('_')[0];

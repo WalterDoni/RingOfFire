@@ -21,6 +21,11 @@ export class StartScreenComponent {
 
   constructor(private router: Router) { }
 
+  /**
+ *  Create a new game and push it into the firebase-database.
+ * @function - toJson() -> after an element is added into the database, transform it into an array.
+ * @throws {Error} -> err show the error in the console.
+ */
     async newGame() {
       const game = new Game();
       await addDoc(collection(this.firestore, 'games'), game.toJson())
@@ -28,10 +33,7 @@ export class StartScreenComponent {
           console.error(err);
         })
         .then((docRef: any) => {
-          console.log('Document written with ID', docRef.id);
           this.router.navigateByUrl('/game/' + docRef.id);
         });
-    }
-
-    
+    }  
 }
