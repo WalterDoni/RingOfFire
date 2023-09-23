@@ -19,14 +19,14 @@
    
     img{
         position: absolute;
-        width: 250px;
+        width: 220px;
 
         @media (max-width:800px) {
-            width: 220px;  
+            width: 180px;  
         }
 
         @media (max-width:650px) {
-            width: 200px;
+            width: 120px;
             
         }
     };
@@ -34,21 +34,37 @@
 
 .top-card{
     cursor: pointer;
+    right: 10px;
     transition: all 180ms ease-in-out;
 
     &:hover{
         transform: scale(1.05) translateY(-20px);
     }
+
 }
 
 .played-card{
-    right: 30px;
+    right: 220px;
+    top: -90px;
     transform: scale(1) translateX(280px) translateY(-290px) rotate(-30deg);
+
+    @media (max-width:650px) {
+        top: 70px;
+        transform: scale(1) translateX(280px) translateY(-280px) rotate(-30deg);
+        
+    }
  
 }
 .pick-card{
     animation: pick-card-animation 1s ease-in-out;
-    transform: scale(1) translateX(280px) translateY(-290px) rotate(-30deg);
+    right: 10px;
+    transform: scale(1) translateX(70px) translateY(-380px) rotate(-30deg);
+
+ 
+    @media (max-width:650px) {
+        animation: pick-card-animation-responsive 1s ease-in-out;
+        transform: scale(1) translateX(70px) translateY(-210px) rotate(-30deg);
+    }
 }
 
 @keyframes pick-card-animation{
@@ -62,7 +78,23 @@
         transform: scale(1.2);
     }
     100%{
-        transform: scale(1) translateX(280px) translateY(-290px) rotate(-30deg);
+        transform: scale(1) translateX(70px) translateY(-380px) rotate(-30deg);
+    }
+
+}
+
+@keyframes pick-card-animation-responsive{
+    0%{
+        transform: scale(1);
+    }
+    40%{
+        transform: scale(1.2);
+    }
+    60%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1) translateX(70px) translateY(-210px) rotate(-30deg);
     }
 
 }
@@ -109,6 +141,7 @@ app-player{
 
 .gameOver {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -123,6 +156,7 @@ app-player{
         color: white;
         font-size: 160px;
         animation: ease-in-out, pulsate 1.5s infinite alternate;
+        margin-bottom: 60px;
 
         @media(max-width:1000px){
             font-size: 100px;
@@ -130,6 +164,7 @@ app-player{
 
         @media(max-width:620px){
             font-size: 80px;
+            margin-bottom: 30px;
         }
 
         @media(max-width:490px){
@@ -137,8 +172,53 @@ app-player{
         }
     }
 
+    h3 {
+        color: white;
+        font-size: 30px;
+        animation: ease-in-out, pulsate 1.5s infinite alternate;
+        margin: 0;
+
+          @media(max-width:620px){
+            font-size: 15px;
+        }
+
+    }
+
 }
 
+.addMorePlayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  
+    height: 100vh;
+
+    h1 {
+        color: white;
+        font-size: 60px;
+        animation: ease-in-out, pulsate 1.5s infinite alternate;
+        position: absolute;
+        bottom: 200px;
+
+        @media(max-width:1000px){
+            font-size: 50px;
+        }
+
+        @media(max-width:620px){
+            font-size: 30px;
+        }
+     
+        @media(max-width:440px){
+            font-size: 20px;
+        }
+    }
+
+}
 
 @keyframes pulsate {
     100% {

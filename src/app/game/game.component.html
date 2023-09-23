@@ -6,21 +6,22 @@
         *ngFor="let player of game.players; let i= index;" [name]='player' [playerActive]="i == game.currentPlayer"
         class="hide-desktop"></app-player-mobile></div>
 
-<div *ngIf="gameOver" class="gameOver"><h1>GAME OVER!</h1></div>
+<div *ngIf="gameOver" class="gameOver"><h1>GAME OVER!</h1><h3>The game will restart shortly.</h3></div>
+<div *ngIf="addMorePlayer" class="addMorePlayer"><h1>You need atleast two players.</h1></div>
 
 <div *ngIf="!gameOver" class="field">
     <img class="background" src="assets/img/background.jpg" alt="">
     <div class="card-stack">
         <!-- Cardstack-->
-        <img [ngStyle]="{'right.px' : i * 5}" *ngFor="let card of [1,2,3,4,5] let i = index;" src="assets/img/cover.png"
+        <img [ngStyle]="{'right.px' : i * 10 - 30}" *ngFor="let card of [1,2,3,4,5] let i = index;" src="assets/img/cover.png"
             alt="">
-        <img (click)="takeCard()" class="top-card" style="right: 30px" src="assets/img/cover.png">
+        <img (click)="takeCard()" class="top-card" src="assets/img/cover.png">
 
         <!-- Stack for played cards-->
         <img *ngFor="let card of game.playedCards" class="played-card" src="assets/img/cards/{{card}}.png" alt="">
 
         <!-- Current card (Animation)-->
-        <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pick-card" style="right: 30px"
+        <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pick-card" 
             src="assets/img/cards/{{game.currentCard}}.png">
     </div>
 </div>

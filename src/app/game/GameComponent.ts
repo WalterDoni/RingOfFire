@@ -17,6 +17,7 @@ export class GameComponent implements OnInit {
   gameId: string = '';
   game!: Game
   gameOver = false;
+  addMorePlayer = false;
   firestore: Firestore = inject(Firestore);
   collectionInstance = collection(this.firestore, 'games');
 
@@ -65,8 +66,22 @@ export class GameComponent implements OnInit {
 
 
   takeCard() {
+    if (this.game.players.length < 2) {
+      this.addMorePlayer = true;
+      return;
+    }
+    if (this.game.players.length >= 2) {
+      this.addMorePlayer = false;
+    }
     if (this.game.stack.length == 0) {
       this.gameOver = true;
+      this.game.stack.push(...this.game.playedCards);
+      this.game.playedCards = [];
+      this.saveGame();
+      setTimeout(() => {
+        window.location.reload();
+      }, 5000);
+      
     }
     else if (!this.game.pickCardAnimation && this.game.stack.length > 0) {
       this.game.currentCard = this.game.stack.pop()!;
@@ -91,8 +106,10 @@ export class GameComponent implements OnInit {
         if (change == 'DELETE') {
           this.game.players.splice(playerID, 1);
           this.game.player_images.splice(playerID, 1);
+        } else {
+          this.game.player_images[playerID] = change;
         }
-        this.game.player_images[playerID] = change;
+
         this.saveGame();
       }
     });
