@@ -1,13 +1,4 @@
 {
-  "targets": {
-    "ring-of-fire-e55fa": {
-      "hosting": {
-        "ringoffire": [
-          "ring-of-fire-e55fa"
-        ]
-      }
-    }
-  },
   "projects": {
     "default": "ring-of-fire-e55fa"
   }
