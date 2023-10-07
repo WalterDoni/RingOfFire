@@ -21,6 +21,7 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
+import { JoinSectionComponent } from './join-section/join-section.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
     GameInfoComponent,
     PlayerMobileComponent,
     EditPlayerComponent,
+    JoinSectionComponent,
     
   ],
   imports: [
